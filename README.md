@@ -1,4 +1,4 @@
-# tencentyun/image-python-sdk-v2.0
-ÌÚÑ¶ÔÆ [ÍòÏóÓÅÍ¼£¨Cloud Image v2.0£©](https://www.qcloud.com/product/ci) SDK for PHP
+# image-python-sdk-v2.0
+è…¾è®¯äº‘ [ä¸‡è±¡ä¼˜å›¾ï¼ˆCloud Imageï¼‰](https://www.qcloud.com/product/ci) SDK for PHP
 
-¾´ÇëÆÚ´ı
+æ•¬è¯·æœŸå¾…
