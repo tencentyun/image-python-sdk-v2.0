@@ -1,4 +1,209 @@
-# image-python-sdk-v2.0
-è…¾è®¯äº‘ [ä¸‡è±¡ä¼˜å›¾ï¼ˆCloud Imageï¼‰](https://www.qcloud.com/product/ci) SDK for PHP
+# tencentyun/image-python-sdk-v2.0
+ÌÚÑ¶ÔÆ [ÍòÏóÓÅÍ¼£¨Cloud Image v2.0£©](https://www.qcloud.com/product/ci) SDK for Python
 
-æ•¬è¯·æœŸå¾…
+## °²×°
+
+### Ê¹ÓÃpip
+Python 2:
+
+pip install qcloud_image
+
+Python 3:
+
+pip3 install qcloud_image
+
+### ÏÂÔØÔ´Âë
+´ÓgithubÏÂÔØÔ´Âë×°Èëµ½ÄúµÄ³ÌĞòÖĞ£¬²¢¼ÓÔØqcloud_image°ü
+µ÷ÓÃÇë²Î¿¼sample.py
+
+### 1. ÔÚÌÚÑ¶ÔÆÉêÇëÒµÎñµÄÊÚÈ¨
+ÊÚÈ¨°üÀ¨£º
+		
+	APP_ID 
+	SECRET_ID
+	SECRET_KEY
+	BUCKET
+
+### 2. ´´½¨¶ÔÓ¦²Ù×÷ÀàµÄ¶ÔÏó
+Èç¹ûÒªÊ¹ÓÃÍ¼Æ¬£¬ĞèÒª´´½¨Í¼Æ¬²Ù×÷Àà¶ÔÏó
+
+	from qcloud_image import Client
+	from qcloud_image import CIUrl, CIFile, CIBuffer, CIUrls, CIFiles, CIBuffers
+
+	appid = 'APP_ID'
+	secret_id = 'SECRET_ID'
+	secret_key = 'SECRET_KEY'
+	bucket = 'BUCKET'
+
+	client = Client(appid, secret_id, secret_key, bucket)
+	client.use_http()
+	client.set_timeout(30)
+
+### 3. µ÷ÓÃ¶ÔÓ¦µÄ·½·¨
+ÔÚ´´½¨Íê¶ÔÏóºó£¬¸ù¾İÊµ¼ÊĞèÇó£¬µ÷ÓÃ¶ÔÓ¦µÄ²Ù×÷·½·¨¾Í¿ÉÒÔÁË¡£sdkÌá¹©µÄ·½·¨°üÀ¨£ºÍ¼Æ¬Ê¶±ğ¡¢ÈËÁ³Ê¶±ğ¼°ÈËÁ³ºËÉíµÈ¡£
+
+#### 3.1 Í¼Æ¬Ê¶±ğ
+Í¼Æ¬Ê¶±ğ°üÀ¨£ºÍ¼Æ¬¼ø»Æ¡¢Í¼Æ¬±êÇ©¡¢OCR-Éí·İÖ¤Ê¶±ğ¼°OCR-ÃûÆ¬Ê¶±ğ¡£
+
+##### Í¼Æ¬¼ø»Æ
+
+```python
+	#µ¥¸ö»ò¶à¸öÍ¼Æ¬Url
+	print (client.porn_detect(CIUrls(['http://jiangsu.china.com.cn/uploadfile/2015/1102/1446443026382534.jpg','http://n.sinaimg.cn/fashion/transform/20160704/flgG-fxtspsa6612705.jpg'])))
+	#µ¥¸ö»ò¶à¸öÍ¼Æ¬File
+	print (client.porn_detect(CIFiles(['./test.jpg',])))
+```
+
+##### Í¼Æ¬±êÇ©
+
+```python
+	#µ¥¸öÍ¼Æ¬url
+	print (client.tag_detect(CIUrl('http://img3.a0bi.com/upload/ttq/20160814/1471155260063.png')))
+	#µ¥¸öÍ¼Æ¬file
+	print (client.tag_detect(CIFile('./hot2.jpg')))
+```
+
+##### OCR-Éí·İÖ¤Ê¶±ğ
+
+```python
+	#µ¥¸ö»ò¶à¸öÍ¼Æ¬Url,Ê¶±ğÉí·İÖ¤ÕıÃæ
+	print (client.idcard_detect(CIUrls(['http://imgs.focus.cn/upload/sz/5876/a_58758051.jpg']), 0))
+	#µ¥¸ö»ò¶à¸öÍ¼Æ¬file,Ê¶±ğÉí·İÖ¤ÕıÃæ
+	print (client.idcard_detect(CIFiles(['./id4_zheng.jpg','./id1_zheng.jpg']), 0))
+	#µ¥¸ö»ò¶à¸öÍ¼Æ¬Url,Ê¶±ğÉí·İÖ¤·´Ãæ
+	print (client.idcard_detect(CIUrls(['http://www.csx.gov.cn/cwfw/bszn/201403/W020121030349825312574.jpg', 'http://www.4009951551.com/upload/image/20151026/1445831136187479.png']), 1))
+	#µ¥¸ö»ò¶à¸öÍ¼Æ¬file,Ê¶±ğÉí·İÖ¤·´Ãæ
+	print (client.idcard_detect(CIFiles(['./id5_fan.jpg']), 1))
+```
+
+##### OCR-ÃûÆ¬Ê¶±ğ	
+```python
+	#µ¥¸ö»ò¶à¸öÍ¼Æ¬Url
+	print (client.namecard_detect(CIUrls(['http://pic1.nipic.com/2008-12-03/2008123181119306_2.jpg', 'http://pic.58pic.com/58pic/12/49/04/80k58PICzYP.jpg'])))
+	#µ¥¸ö»ò¶à¸öÍ¼Æ¬file
+	print (client.namecard_detect(CIFiles(['./name1.jpg'])))
+```
+
+#### 3.2 ÈËÁ³Ê¶±ğ
+ÈËÁ³Ê¶±ğ°üÀ¨£ºÈËÁ³¼ì²â¡¢Îå¹Ù¶¨Î»¡¢¸öÌåĞÅÏ¢¹ÜÀí¡¢ÈËÁ³ÑéÖ¤¡¢ÈËÁ³¶Ô±È¼°ÈËÁ³¼ìË÷¡£
+
+#### ÈËÁ³¼ì²â
+
+```python
+	#µ¥¸öÍ¼Æ¬Url, mode:1Îª¼ì²â×î´óµÄÈËÁ³ , 0Îª¼ì²âËùÓĞÈËÁ³
+	print (client.face_detect(CIUrl('http://img3.a0bi.com/upload/ttq/20160814/1471155260063.png')))
+	#µ¥¸öÍ¼Æ¬file,mode:1Îª¼ì²â×î´óµÄÈËÁ³ , 0Îª¼ì²âËùÓĞÈËÁ³
+	print (client.face_detect(CIFile('./hot2.jpg')))
+```
+
+##### Îå¹Ù¶¨Î»
+
+```python
+	#µ¥¸öÍ¼Æ¬Url,mode:1Îª¼ì²â×î´óµÄÈËÁ³ , 0Îª¼ì²âËùÓĞÈËÁ³
+	print (client.face_shape(CIUrl('http://img3.a0bi.com/upload/ttq/20160814/1471155260063.png'),1))
+	#µ¥¸öÍ¼Æ¬file,mode:1Îª¼ì²â×î´óµÄÈËÁ³ , 0Îª¼ì²âËùÓĞÈËÁ³
+	print (client.face_shape(CIFile('./hot2.jpg'),1))
+```
+
+##### ¸öÌåĞÅÏ¢¹ÜÀí
+```python
+    //¸öÌå´´½¨,´´½¨Ò»¸öPerson£¬²¢½«Person·ÅÖÃµ½group_idsÖ¸¶¨µÄ×éµ±ÖĞ£¬²»´æÔÚµÄgroup_id»á×Ô¶¯´´½¨¡£
+	#´´½¨Ò»¸öPerson, Ê¹ÓÃÍ¼Æ¬url
+	print (client.face_newperson('person111', ['group2',], CIUrl('http://img3.a0bi.com/upload/ttq/20160814/1471155260063.png'), 'xiaoxin'))
+	#´´½¨Ò»¸öPerson, Ê¹ÓÃÍ¼Æ¬file
+	print (client.face_newperson('person211', ['group2',], CIFile('./hot2.jpg')))
+
+	//Ôö¼ÓÈËÁ³,½«Ò»×éFace¼ÓÈëµ½Ò»¸öPersonÖĞ¡£×¢Òâ£¬Ò»¸öFaceÖ»ÄÜ±»¼ÓÈëµ½Ò»¸öPersonÖĞ¡£ 
+	#½«µ¥¸ö»òÕß¶à¸öFaceµÄurl¼ÓÈëµ½Ò»¸öPersonÖĞ
+	print (client.face_addface('person111', CIUrls(['http://jiangsu.china.com.cn/uploadfile/2015/1102/1446443026382534.jpg','http://n.sinaimg.cn/fashion/transform/20160704/flgG-fxtspsa6612705.jpg'])))
+	#½«µ¥¸ö»òÕß¶à¸öFaceµÄfile¼ÓÈëµ½Ò»¸öPersonÖĞ
+	print (client.face_addface('person211', CIFiles(['./test.jpg',])))
+
+	#É¾³ıÈËÁ³,É¾³ıÒ»¸öpersonÏÂµÄface
+	print (client.face_delface('person111', ['person111',]))
+
+	#ÉèÖÃĞÅÏ¢
+	print (client.face_setinfo('person111', 'hello'))
+
+	#»ñÈ¡ĞÅÏ¢
+	print (client.face_getinfo('person111'))
+
+	#»ñÈ¡×éÁĞ±í
+	print (client.face_getgroupids())
+
+	#»ñÈ¡ÈËÁĞ±í
+	print (client.face_getpersonids('group2'))
+
+	#»ñÈ¡ÈËÁ³ÁĞ±í
+	print (client.face_getfaceids('person211'))
+
+	#»ñÈ¡ÈËÁ³ĞÅÏ¢
+	print (client.face_getfaceinfo('1820307972625034938'))
+
+	#É¾³ı¸öÈË
+	print (client.face_delperson('person11'))
+```
+
+##### ÈËÁ³ÑéÖ¤
+¸ø¶¨Ò»¸öFaceºÍÒ»¸öPerson£¬·µ»ØÊÇ·ñÊÇÍ¬Ò»¸öÈËµÄÅĞ¶ÏÒÔ¼°ÖÃĞÅ¶È
+
+```python
+	#ÈËÁ³ÑéÖ¤,µ¥¸öÍ¼Æ¬Url
+	print (client.face_verify('person111', CIUrl('http://img3.a0bi.com/upload/ttq/20160814/1471155260063.png')))
+	#ÈËÁ³ÑéÖ¤,µ¥¸öÍ¼Æ¬file
+	print (client.face_verify('person111', CIFile('./test.jpg')))
+```
+
+##### ÈËÁ³¼ìË÷
+¶ÔÓÚÒ»¸ö´ıÊ¶±ğµÄÈËÁ³Í¼Æ¬£¬ÔÚÒ»¸öGroupÖĞÊ¶±ğ³ö×îÏàËÆµÄTop5 Person×÷ÎªÆäÉí·İ·µ»Ø£¬·µ»ØµÄTop5ÖĞ°´ÕÕÏàËÆ¶È´Ó´óµ½Ğ¡ÅÅÁĞ¡£
+
+```python
+	#ÈËÁ³¼ìË÷,µ¥¸öÎÄ¼şurl
+	print (client.face_identify('group1', CIUrl('http://www.5djiaren.com/uploads/2016-07/22-141354_227.jpg')))
+	##ÈËÁ³¼ìË÷,µ¥¸öÎÄ¼şfile
+	print (client.face_identify('group2', CIFile('./test.jpg')))
+```
+
+##### ÈËÁ³¶Ô±È
+
+```python
+	#Á½¸ö¶Ô±ÈÍ¼Æ¬µÄÎÄ¼şurl
+	print (client.face_compare(CIFile('./zhao1.jpg'), CIFile('./zhao2.jpg')))
+	#Á½¸ö¶Ô±ÈÍ¼Æ¬µÄÎÄ¼şfile
+	print (client.face_compare(CIUrl('http://www.miexue.com/d/file/junshiyingshi/2016-12-05/60bce03aac7a57e4fc600ecee1591e1d.jpg'), CIUrl('http://img.mp.itc.cn/upload/20161118/ee6be67ec6fb4135b5d579ab05acd715_th.jpg')))
+	#Ò»¸öÊÇÍ¼Æ¬µÄÎÄ¼şurl£¬ Ò»¸öÊÇ¶Ô±ÈÍ¼Æ¬µÄÎÄ¼şfile
+	print (client.face_compare(CIFile('./zhao1.jpg'), CIUrl('http://www.miexue.com/d/file/junshiyingshi/2016-12-05/60bce03aac7a57e4fc600ecee1591e1d.jpg')))
+```
+	
+
+		
+#### 3.3 ÈËÁ³ºËÉí
+##### Éí·İÖ¤Ê¶±ğ¶Ô±È
+
+```python
+	#Éí·İÖ¤url
+	print (client.face_idcardcompare('420822198804266119', 'ÀîÊ±½Ü', CIUrl('http://docs.ebdoor.com/Image/CompanyCertificate/1/16844.jpg')))
+	#Éí·İÖ¤ÎÄ¼şfile
+	print (client.face_idcardcompare('420822198804266119', 'ÀîÊ±½Ü', CIFile('./id4_zheng.jpg')))
+```
+
+##### »îÌå¼ì²â¡ª»ñÈ¡´½ÓïÑéÖ¤Âë
+
+```python
+	obj = client.face_livegetfour()
+	print (obj)
+	#ÑéÖ¤Âë
+	validate_data = obj['data']['validate_data']
+```
+
+##### »îÌå¼ì²â-ÊÓÆµÓëÉí·İÖ¤¸ßÇåÕÕÆ¬µÄ±È¶Ô
+
+```python	
+	print (client.face_livedetectfour(validate_data, CIFile('../dn.qlv'), False, CIFile('../wxb.jpg')))
+```
+
+##### »îÌå¼ì²â-ÊÓÆµÓëÓÃ»§ÕÕÆ¬µÄ±È¶Ô	
+
+```python	
+	print (client.face_idcardlivedetectfour(validate_data, CIFile('../dnn.qlv'), '330782198802084329', 'ÀîÊ±½Ü'))
+```
