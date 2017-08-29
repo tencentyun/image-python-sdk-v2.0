@@ -1,9 +1,9 @@
 # tencentyun/image-python-sdk-v2.0
-ÌÚÑ¶ÔÆ [ÍòÏóÓÅÍ¼£¨Cloud Image v2.0£©](https://www.qcloud.com/product/ci) SDK for Python
+è…¾è®¯äº‘ [ä¸‡è±¡ä¼˜å›¾ï¼ˆCloud Image v2.0ï¼‰](https://www.qcloud.com/product/ci) SDK for Python
 
-## °²×°
+## å®‰è£…
 
-### Ê¹ÓÃpip
+### ä½¿ç”¨pip
 Python 2:
 
 pip install qcloud_image
@@ -12,20 +12,20 @@ Python 3:
 
 pip3 install qcloud_image
 
-### ÏÂÔØÔ´Âë
-´ÓgithubÏÂÔØÔ´Âë×°Èëµ½ÄúµÄ³ÌĞòÖĞ£¬²¢¼ÓÔØqcloud_image°ü
-µ÷ÓÃÇë²Î¿¼sample.py
+### ä¸‹è½½æºç 
+ä»githubä¸‹è½½æºç è£…å…¥åˆ°æ‚¨çš„ç¨‹åºä¸­ï¼Œå¹¶åŠ è½½qcloud_imageåŒ…
+è°ƒç”¨è¯·å‚è€ƒsample.py
 
-### 1. ÔÚÌÚÑ¶ÔÆÉêÇëÒµÎñµÄÊÚÈ¨
-ÊÚÈ¨°üÀ¨£º
+### 1. åœ¨è…¾è®¯äº‘ç”³è¯·ä¸šåŠ¡çš„æˆæƒ
+æˆæƒåŒ…æ‹¬ï¼š
 		
 	APP_ID 
 	SECRET_ID
 	SECRET_KEY
 	BUCKET
 
-### 2. ´´½¨¶ÔÓ¦²Ù×÷ÀàµÄ¶ÔÏó
-Èç¹ûÒªÊ¹ÓÃÍ¼Æ¬£¬ĞèÒª´´½¨Í¼Æ¬²Ù×÷Àà¶ÔÏó
+### 2. åˆ›å»ºå¯¹åº”æ“ä½œç±»çš„å¯¹è±¡
+å¦‚æœè¦ä½¿ç”¨å›¾ç‰‡ï¼Œéœ€è¦åˆ›å»ºå›¾ç‰‡æ“ä½œç±»å¯¹è±¡
 
 	from qcloud_image import Client
 	from qcloud_image import CIUrl, CIFile, CIBuffer, CIUrls, CIFiles, CIBuffers
@@ -39,171 +39,171 @@ pip3 install qcloud_image
 	client.use_http()
 	client.set_timeout(30)
 
-### 3. µ÷ÓÃ¶ÔÓ¦µÄ·½·¨
-ÔÚ´´½¨Íê¶ÔÏóºó£¬¸ù¾İÊµ¼ÊĞèÇó£¬µ÷ÓÃ¶ÔÓ¦µÄ²Ù×÷·½·¨¾Í¿ÉÒÔÁË¡£sdkÌá¹©µÄ·½·¨°üÀ¨£ºÍ¼Æ¬Ê¶±ğ¡¢ÈËÁ³Ê¶±ğ¼°ÈËÁ³ºËÉíµÈ¡£
+### 3. è°ƒç”¨å¯¹åº”çš„æ–¹æ³•
+åœ¨åˆ›å»ºå®Œå¯¹è±¡åï¼Œæ ¹æ®å®é™…éœ€æ±‚ï¼Œè°ƒç”¨å¯¹åº”çš„æ“ä½œæ–¹æ³•å°±å¯ä»¥äº†ã€‚sdkæä¾›çš„æ–¹æ³•åŒ…æ‹¬ï¼šå›¾ç‰‡è¯†åˆ«ã€äººè„¸è¯†åˆ«åŠäººè„¸æ ¸èº«ç­‰ã€‚
 
-#### 3.1 Í¼Æ¬Ê¶±ğ
-Í¼Æ¬Ê¶±ğ°üÀ¨£ºÍ¼Æ¬¼ø»Æ¡¢Í¼Æ¬±êÇ©¡¢OCR-Éí·İÖ¤Ê¶±ğ¼°OCR-ÃûÆ¬Ê¶±ğ¡£
+#### 3.1 å›¾ç‰‡è¯†åˆ«
+å›¾ç‰‡è¯†åˆ«åŒ…æ‹¬ï¼šå›¾ç‰‡é‰´é»„ã€å›¾ç‰‡æ ‡ç­¾ã€OCR-èº«ä»½è¯è¯†åˆ«åŠOCR-åç‰‡è¯†åˆ«ã€‚
 
-##### Í¼Æ¬¼ø»Æ
+##### å›¾ç‰‡é‰´é»„
 
 ```python
-	#µ¥¸ö»ò¶à¸öÍ¼Æ¬Url
-	print (client.porn_detect(CIUrls(['http://jiangsu.china.com.cn/uploadfile/2015/1102/1446443026382534.jpg','http://n.sinaimg.cn/fashion/transform/20160704/flgG-fxtspsa6612705.jpg'])))
-	#µ¥¸ö»ò¶à¸öÍ¼Æ¬File
+	#å•ä¸ªæˆ–å¤šä¸ªå›¾ç‰‡Url
+	print (client.porn_detect(CIUrls(['YOUR URL A','YOUR URL B'])))
+	#å•ä¸ªæˆ–å¤šä¸ªå›¾ç‰‡File
 	print (client.porn_detect(CIFiles(['./test.jpg',])))
 ```
 
-##### Í¼Æ¬±êÇ©
+##### å›¾ç‰‡æ ‡ç­¾
 
 ```python
-	#µ¥¸öÍ¼Æ¬url
-	print (client.tag_detect(CIUrl('http://img3.a0bi.com/upload/ttq/20160814/1471155260063.png')))
-	#µ¥¸öÍ¼Æ¬file
+	#å•ä¸ªå›¾ç‰‡url
+	print (client.tag_detect(CIUrl('YOUR URL')))
+	#å•ä¸ªå›¾ç‰‡file
 	print (client.tag_detect(CIFile('./hot2.jpg')))
 ```
 
-##### OCR-Éí·İÖ¤Ê¶±ğ
+##### OCR-èº«ä»½è¯è¯†åˆ«
 
 ```python
-	#µ¥¸ö»ò¶à¸öÍ¼Æ¬Url,Ê¶±ğÉí·İÖ¤ÕıÃæ
-	print (client.idcard_detect(CIUrls(['http://imgs.focus.cn/upload/sz/5876/a_58758051.jpg']), 0))
-	#µ¥¸ö»ò¶à¸öÍ¼Æ¬file,Ê¶±ğÉí·İÖ¤ÕıÃæ
+	#å•ä¸ªæˆ–å¤šä¸ªå›¾ç‰‡Url,è¯†åˆ«èº«ä»½è¯æ­£é¢
+	print (client.idcard_detect(CIUrls(['YOUR URL']), 0))
+	#å•ä¸ªæˆ–å¤šä¸ªå›¾ç‰‡file,è¯†åˆ«èº«ä»½è¯æ­£é¢
 	print (client.idcard_detect(CIFiles(['./id4_zheng.jpg','./id1_zheng.jpg']), 0))
-	#µ¥¸ö»ò¶à¸öÍ¼Æ¬Url,Ê¶±ğÉí·İÖ¤·´Ãæ
-	print (client.idcard_detect(CIUrls(['http://www.csx.gov.cn/cwfw/bszn/201403/W020121030349825312574.jpg', 'http://www.4009951551.com/upload/image/20151026/1445831136187479.png']), 1))
-	#µ¥¸ö»ò¶à¸öÍ¼Æ¬file,Ê¶±ğÉí·İÖ¤·´Ãæ
+	#å•ä¸ªæˆ–å¤šä¸ªå›¾ç‰‡Url,è¯†åˆ«èº«ä»½è¯åé¢
+	print (client.idcard_detect(CIUrls(['YOUR URL A', 'YOUR URL B']), 1))
+	#å•ä¸ªæˆ–å¤šä¸ªå›¾ç‰‡file,è¯†åˆ«èº«ä»½è¯åé¢
 	print (client.idcard_detect(CIFiles(['./id5_fan.jpg']), 1))
 ```
 
-##### OCR-ÃûÆ¬Ê¶±ğ	
+##### OCR-åç‰‡è¯†åˆ«	
 ```python
-	#µ¥¸ö»ò¶à¸öÍ¼Æ¬Url
-	print (client.namecard_detect(CIUrls(['http://pic1.nipic.com/2008-12-03/2008123181119306_2.jpg', 'http://pic.58pic.com/58pic/12/49/04/80k58PICzYP.jpg'])))
-	#µ¥¸ö»ò¶à¸öÍ¼Æ¬file
+	#å•ä¸ªæˆ–å¤šä¸ªå›¾ç‰‡Url
+	print (client.namecard_detect(CIUrls(['YOUR URL A', 'YOUR URL B'])))
+	#å•ä¸ªæˆ–å¤šä¸ªå›¾ç‰‡file
 	print (client.namecard_detect(CIFiles(['./name1.jpg'])))
 ```
 
-#### 3.2 ÈËÁ³Ê¶±ğ
-ÈËÁ³Ê¶±ğ°üÀ¨£ºÈËÁ³¼ì²â¡¢Îå¹Ù¶¨Î»¡¢¸öÌåĞÅÏ¢¹ÜÀí¡¢ÈËÁ³ÑéÖ¤¡¢ÈËÁ³¶Ô±È¼°ÈËÁ³¼ìË÷¡£
+#### 3.2 äººè„¸è¯†åˆ«
+äººè„¸è¯†åˆ«åŒ…æ‹¬ï¼šäººè„¸æ£€æµ‹ã€äº”å®˜å®šä½ã€ä¸ªä½“ä¿¡æ¯ç®¡ç†ã€äººè„¸éªŒè¯ã€äººè„¸å¯¹æ¯”åŠäººè„¸æ£€ç´¢ã€‚
 
-#### ÈËÁ³¼ì²â
+#### äººè„¸æ£€æµ‹
 
 ```python
-	#µ¥¸öÍ¼Æ¬Url, mode:1Îª¼ì²â×î´óµÄÈËÁ³ , 0Îª¼ì²âËùÓĞÈËÁ³
-	print (client.face_detect(CIUrl('http://img3.a0bi.com/upload/ttq/20160814/1471155260063.png')))
-	#µ¥¸öÍ¼Æ¬file,mode:1Îª¼ì²â×î´óµÄÈËÁ³ , 0Îª¼ì²âËùÓĞÈËÁ³
+	#å•ä¸ªå›¾ç‰‡Url, mode:1ä¸ºæ£€æµ‹æœ€å¤§çš„äººè„¸ , 0ä¸ºæ£€æµ‹æ‰€æœ‰äººè„¸
+	print (client.face_detect(CIUrl('YOUR URL')))
+	#å•ä¸ªå›¾ç‰‡file,mode:1ä¸ºæ£€æµ‹æœ€å¤§çš„äººè„¸ , 0ä¸ºæ£€æµ‹æ‰€æœ‰äººè„¸
 	print (client.face_detect(CIFile('./hot2.jpg')))
 ```
 
-##### Îå¹Ù¶¨Î»
+##### äº”å®˜å®šä½
 
 ```python
-	#µ¥¸öÍ¼Æ¬Url,mode:1Îª¼ì²â×î´óµÄÈËÁ³ , 0Îª¼ì²âËùÓĞÈËÁ³
-	print (client.face_shape(CIUrl('http://img3.a0bi.com/upload/ttq/20160814/1471155260063.png'),1))
-	#µ¥¸öÍ¼Æ¬file,mode:1Îª¼ì²â×î´óµÄÈËÁ³ , 0Îª¼ì²âËùÓĞÈËÁ³
+	#å•ä¸ªå›¾ç‰‡Url,mode:1ä¸ºæ£€æµ‹æœ€å¤§çš„äººè„¸ , 0ä¸ºæ£€æµ‹æ‰€æœ‰äººè„¸
+	print (client.face_shape(CIUrl('YOUR URL'),1))
+	#å•ä¸ªå›¾ç‰‡file,mode:1ä¸ºæ£€æµ‹æœ€å¤§çš„äººè„¸ , 0ä¸ºæ£€æµ‹æ‰€æœ‰äººè„¸
 	print (client.face_shape(CIFile('./hot2.jpg'),1))
 ```
 
-##### ¸öÌåĞÅÏ¢¹ÜÀí
+##### ä¸ªä½“ä¿¡æ¯ç®¡ç†
 ```python
-    //¸öÌå´´½¨,´´½¨Ò»¸öPerson£¬²¢½«Person·ÅÖÃµ½group_idsÖ¸¶¨µÄ×éµ±ÖĞ£¬²»´æÔÚµÄgroup_id»á×Ô¶¯´´½¨¡£
-	#´´½¨Ò»¸öPerson, Ê¹ÓÃÍ¼Æ¬url
-	print (client.face_newperson('person111', ['group2',], CIUrl('http://img3.a0bi.com/upload/ttq/20160814/1471155260063.png'), 'xiaoxin'))
-	#´´½¨Ò»¸öPerson, Ê¹ÓÃÍ¼Æ¬file
+    //ä¸ªä½“åˆ›å»º,åˆ›å»ºä¸€ä¸ªPersonï¼Œå¹¶å°†Personæ”¾ç½®åˆ°group_idsæŒ‡å®šçš„ç»„å½“ä¸­ï¼Œä¸å­˜åœ¨çš„group_idä¼šè‡ªåŠ¨åˆ›å»ºã€‚
+	#åˆ›å»ºä¸€ä¸ªPerson, ä½¿ç”¨å›¾ç‰‡url
+	print (client.face_newperson('person111', ['group2',], CIUrl('YOUR URL'), 'xiaoxin'))
+	#åˆ›å»ºä¸€ä¸ªPerson, ä½¿ç”¨å›¾ç‰‡file
 	print (client.face_newperson('person211', ['group2',], CIFile('./hot2.jpg')))
 
-	//Ôö¼ÓÈËÁ³,½«Ò»×éFace¼ÓÈëµ½Ò»¸öPersonÖĞ¡£×¢Òâ£¬Ò»¸öFaceÖ»ÄÜ±»¼ÓÈëµ½Ò»¸öPersonÖĞ¡£ 
-	#½«µ¥¸ö»òÕß¶à¸öFaceµÄurl¼ÓÈëµ½Ò»¸öPersonÖĞ
-	print (client.face_addface('person111', CIUrls(['http://jiangsu.china.com.cn/uploadfile/2015/1102/1446443026382534.jpg','http://n.sinaimg.cn/fashion/transform/20160704/flgG-fxtspsa6612705.jpg'])))
-	#½«µ¥¸ö»òÕß¶à¸öFaceµÄfile¼ÓÈëµ½Ò»¸öPersonÖĞ
+	//å¢åŠ äººè„¸,å°†ä¸€ç»„FaceåŠ å…¥åˆ°ä¸€ä¸ªPersonä¸­ã€‚æ³¨æ„ï¼Œä¸€ä¸ªFaceåªèƒ½è¢«åŠ å…¥åˆ°ä¸€ä¸ªPersonä¸­ã€‚ 
+	#å°†å•ä¸ªæˆ–è€…å¤šä¸ªFaceçš„urlåŠ å…¥åˆ°ä¸€ä¸ªPersonä¸­
+	print (client.face_addface('person111', CIUrls(['YOUR URL A','YOUR URL B'])))
+	#å°†å•ä¸ªæˆ–è€…å¤šä¸ªFaceçš„fileåŠ å…¥åˆ°ä¸€ä¸ªPersonä¸­
 	print (client.face_addface('person211', CIFiles(['./test.jpg',])))
 
-	#É¾³ıÈËÁ³,É¾³ıÒ»¸öpersonÏÂµÄface
+	#åˆ é™¤äººè„¸,åˆ é™¤ä¸€ä¸ªpersonä¸‹çš„face
 	print (client.face_delface('person111', ['person111',]))
 
-	#ÉèÖÃĞÅÏ¢
+	#è®¾ç½®ä¿¡æ¯
 	print (client.face_setinfo('person111', 'hello'))
 
-	#»ñÈ¡ĞÅÏ¢
+	#è·å–ä¿¡æ¯
 	print (client.face_getinfo('person111'))
 
-	#»ñÈ¡×éÁĞ±í
+	#è·å–ç»„åˆ—è¡¨
 	print (client.face_getgroupids())
 
-	#»ñÈ¡ÈËÁĞ±í
+	#è·å–äººåˆ—è¡¨
 	print (client.face_getpersonids('group2'))
 
-	#»ñÈ¡ÈËÁ³ÁĞ±í
+	#è·å–äººè„¸åˆ—è¡¨
 	print (client.face_getfaceids('person211'))
 
-	#»ñÈ¡ÈËÁ³ĞÅÏ¢
+	#è·å–äººè„¸ä¿¡æ¯
 	print (client.face_getfaceinfo('1820307972625034938'))
 
-	#É¾³ı¸öÈË
+	#åˆ é™¤ä¸ªäºº
 	print (client.face_delperson('person11'))
 ```
 
-##### ÈËÁ³ÑéÖ¤
-¸ø¶¨Ò»¸öFaceºÍÒ»¸öPerson£¬·µ»ØÊÇ·ñÊÇÍ¬Ò»¸öÈËµÄÅĞ¶ÏÒÔ¼°ÖÃĞÅ¶È
+##### äººè„¸éªŒè¯
+ç»™å®šä¸€ä¸ªFaceå’Œä¸€ä¸ªPersonï¼Œè¿”å›æ˜¯å¦æ˜¯åŒä¸€ä¸ªäººçš„åˆ¤æ–­ä»¥åŠç½®ä¿¡åº¦
 
 ```python
-	#ÈËÁ³ÑéÖ¤,µ¥¸öÍ¼Æ¬Url
-	print (client.face_verify('person111', CIUrl('http://img3.a0bi.com/upload/ttq/20160814/1471155260063.png')))
-	#ÈËÁ³ÑéÖ¤,µ¥¸öÍ¼Æ¬file
+	#äººè„¸éªŒè¯,å•ä¸ªå›¾ç‰‡Url
+	print (client.face_verify('person111', CIUrl('YOUR URL')))
+	#äººè„¸éªŒè¯,å•ä¸ªå›¾ç‰‡file
 	print (client.face_verify('person111', CIFile('./test.jpg')))
 ```
 
-##### ÈËÁ³¼ìË÷
-¶ÔÓÚÒ»¸ö´ıÊ¶±ğµÄÈËÁ³Í¼Æ¬£¬ÔÚÒ»¸öGroupÖĞÊ¶±ğ³ö×îÏàËÆµÄTop5 Person×÷ÎªÆäÉí·İ·µ»Ø£¬·µ»ØµÄTop5ÖĞ°´ÕÕÏàËÆ¶È´Ó´óµ½Ğ¡ÅÅÁĞ¡£
+##### äººè„¸æ£€ç´¢
+å¯¹äºä¸€ä¸ªå¾…è¯†åˆ«çš„äººè„¸å›¾ç‰‡ï¼Œåœ¨ä¸€ä¸ªGroupä¸­è¯†åˆ«å‡ºæœ€ç›¸ä¼¼çš„Top5 Personä½œä¸ºå…¶èº«ä»½è¿”å›ï¼Œè¿”å›çš„Top5ä¸­æŒ‰ç…§ç›¸ä¼¼åº¦ä»å¤§åˆ°å°æ’åˆ—ã€‚
 
 ```python
-	#ÈËÁ³¼ìË÷,µ¥¸öÎÄ¼şurl
-	print (client.face_identify('group1', CIUrl('http://www.5djiaren.com/uploads/2016-07/22-141354_227.jpg')))
-	##ÈËÁ³¼ìË÷,µ¥¸öÎÄ¼şfile
+	#äººè„¸æ£€ç´¢,å•ä¸ªæ–‡ä»¶url
+	print (client.face_identify('group1', CIUrl('YOUR URL')))
+	##äººè„¸æ£€ç´¢,å•ä¸ªæ–‡ä»¶file
 	print (client.face_identify('group2', CIFile('./test.jpg')))
 ```
 
-##### ÈËÁ³¶Ô±È
+##### äººè„¸å¯¹æ¯”
 
 ```python
-	#Á½¸ö¶Ô±ÈÍ¼Æ¬µÄÎÄ¼şurl
+	#ä¸¤ä¸ªå¯¹æ¯”å›¾ç‰‡çš„æ–‡ä»¶url
 	print (client.face_compare(CIFile('./zhao1.jpg'), CIFile('./zhao2.jpg')))
-	#Á½¸ö¶Ô±ÈÍ¼Æ¬µÄÎÄ¼şfile
-	print (client.face_compare(CIUrl('http://www.miexue.com/d/file/junshiyingshi/2016-12-05/60bce03aac7a57e4fc600ecee1591e1d.jpg'), CIUrl('http://img.mp.itc.cn/upload/20161118/ee6be67ec6fb4135b5d579ab05acd715_th.jpg')))
-	#Ò»¸öÊÇÍ¼Æ¬µÄÎÄ¼şurl£¬ Ò»¸öÊÇ¶Ô±ÈÍ¼Æ¬µÄÎÄ¼şfile
-	print (client.face_compare(CIFile('./zhao1.jpg'), CIUrl('http://www.miexue.com/d/file/junshiyingshi/2016-12-05/60bce03aac7a57e4fc600ecee1591e1d.jpg')))
+	#ä¸¤ä¸ªå¯¹æ¯”å›¾ç‰‡çš„æ–‡ä»¶file
+	print (client.face_compare(CIUrl('YOUR URL A'), CIUrl('YOUR URL B')))
+	#ä¸€ä¸ªæ˜¯å›¾ç‰‡çš„æ–‡ä»¶urlï¼Œ ä¸€ä¸ªæ˜¯å¯¹æ¯”å›¾ç‰‡çš„æ–‡ä»¶file
+	print (client.face_compare(CIFile('./zhao1.jpg'), CIUrl('YOUR URL C')))
 ```
 	
 
 		
-#### 3.3 ÈËÁ³ºËÉí
-##### Éí·İÖ¤Ê¶±ğ¶Ô±È
+#### 3.3 äººè„¸æ ¸èº«
+##### èº«ä»½è¯è¯†åˆ«å¯¹æ¯”
 
 ```python
-	#Éí·İÖ¤url
-	print (client.face_idcardcompare('420822198804266119', 'ÀîÊ±½Ü', CIUrl('http://docs.ebdoor.com/Image/CompanyCertificate/1/16844.jpg')))
-	#Éí·İÖ¤ÎÄ¼şfile
-	print (client.face_idcardcompare('420822198804266119', 'ÀîÊ±½Ü', CIFile('./id4_zheng.jpg')))
+	#èº«ä»½è¯url
+	print (client.face_idcardcompare('ID CARD NUM', 'NAME', CIUrl('YOUR URL')))
+	#èº«ä»½è¯æ–‡ä»¶file
+	print (client.face_idcardcompare('ID CARD NUM', 'NAME', CIFile('./id4_zheng.jpg')))
 ```
 
-##### »îÌå¼ì²â¡ª»ñÈ¡´½ÓïÑéÖ¤Âë
+##### æ´»ä½“æ£€æµ‹â€”è·å–å”‡è¯­éªŒè¯ç 
 
 ```python
 	obj = client.face_livegetfour()
 	print (obj)
-	#ÑéÖ¤Âë
+	#éªŒè¯ç 
 	validate_data = obj['data']['validate_data']
 ```
 
-##### »îÌå¼ì²â-ÊÓÆµÓëÉí·İÖ¤¸ßÇåÕÕÆ¬µÄ±È¶Ô
+##### æ´»ä½“æ£€æµ‹-è§†é¢‘ä¸èº«ä»½è¯é«˜æ¸…ç…§ç‰‡çš„æ¯”å¯¹
 
 ```python	
 	print (client.face_livedetectfour(validate_data, CIFile('../dn.qlv'), False, CIFile('../wxb.jpg')))
 ```
 
-##### »îÌå¼ì²â-ÊÓÆµÓëÓÃ»§ÕÕÆ¬µÄ±È¶Ô	
+##### æ´»ä½“æ£€æµ‹-è§†é¢‘ä¸ç”¨æˆ·ç…§ç‰‡çš„æ¯”å¯¹	
 
 ```python	
-	print (client.face_idcardlivedetectfour(validate_data, CIFile('../dnn.qlv'), '330782198802084329', 'ÀîÊ±½Ü'))
+	print (client.face_idcardlivedetectfour(validate_data, CIFile('../dnn.qlv'), 'ID CARD NUM', 'NAME'))
 ```
