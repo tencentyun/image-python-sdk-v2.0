@@ -200,7 +200,7 @@ class Client(object):
         if len(pictures) == 0:
             return Error.json(Error.Param, 'param pictures is empty')
 
-        requrl = self._conf.build_url('/ocr/namecard')
+        requrl = self._conf.build_url('/ocr/businesscard')
         headers = {
             'Host': self._conf.host(),
             'Authorization': self._auth.get_sign(self._bucket),
